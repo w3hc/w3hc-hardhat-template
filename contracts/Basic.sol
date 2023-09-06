@@ -4,12 +4,12 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract Basic is ERC20 {
-    constructor(uint _supply) ERC20("Basic ERC-20", "BASIC") {
-        _mint(msg.sender, _supply);
+    constructor(uint _initialSupply) ERC20("Basic ERC-20", "BASIC") {
+        _mint(msg.sender, _initialSupply);
     }
 
-    function mint(uint _supply) public {
-        _mint(msg.sender, _supply);
+    function mint(uint _amount) public {
+        _mint(msg.sender, _amount);
     }
 
     receive() external payable {
