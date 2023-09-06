@@ -38,6 +38,18 @@ or
 npx hardhat run scripts/deploy.ts --network goerli
 ```
 
+## Use
+
+```
+pnpm mint --amount 42
+```
+
+or
+
+```
+npx hardhat mint --amount 42 --network goerli
+```
+
 ## Versions
 
 - Node [v18.17.1](https://nodejs.org/uk/blog/release/v18.17.1/)
