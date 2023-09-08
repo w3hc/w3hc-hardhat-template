@@ -1,19 +1,20 @@
-import { HardhatUserConfig } from "hardhat/config";
-import "@nomicfoundation/hardhat-toolbox";
-import "@nomicfoundation/hardhat-verify";
-import * as dotenv from "dotenv";
+import { HardhatUserConfig } from "hardhat/config"
+import "@nomicfoundation/hardhat-toolbox"
+import "@nomicfoundation/hardhat-verify"
+import * as dotenv from "dotenv"
 import "./tasks/mint"
-dotenv.config();
+import "./tasks/send"
+dotenv.config()
 
 const {
   GOERLI_RPC_ENDPOINT_URL,
   GOERLI_PRIVATE_KEY,
   ETHERSCAN_API_KEY
-} = process.env;
+} = process.env
 
 const config: HardhatUserConfig = {
   solidity: {
-    version: "0.8.21",
+    version: "0.8.19",
     settings: {
       optimizer: {
         enabled: true,
@@ -38,4 +39,4 @@ const config: HardhatUserConfig = {
   },
 };
 
-export default config;
+export default config

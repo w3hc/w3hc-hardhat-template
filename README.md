@@ -32,22 +32,18 @@ pnpm test
 pnpm basic
 ```
 
-or
-
-```
-npx hardhat run scripts/deploy.ts --network goerli
-```
-
 ## Use
 
-```
-pnpm mint --amount 42
-```
-
-or
+Mint:
 
 ```
-npx hardhat mint --amount 42 --network goerli
+pnpm mint 42
+```
+
+Send:
+
+```
+pnpm mint 8
 ```
 
 ## Versions
