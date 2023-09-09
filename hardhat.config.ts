@@ -13,6 +13,17 @@ const {
 } = process.env
 
 const config: HardhatUserConfig = {
+  defaultNetwork: "hardhat",
+  networks: {
+    'hardhat': {
+      chainId: 1337,
+      allowUnlimitedContractSize: true
+    },
+    'goerli': {
+      url: GOERLI_RPC_ENDPOINT_URL || "https://goerli.gateway.tenderly.co",
+      accounts: GOERLI_PRIVATE_KEY !== undefined ? [GOERLI_PRIVATE_KEY] : [],
+    }
+  }, 
   solidity: {
     version: "0.8.19",
     settings: {
@@ -22,16 +33,6 @@ const config: HardhatUserConfig = {
       }
     }
   },
-  networks: {
-    'hardhat': {
-      chainId: 1337,
-      allowUnlimitedContractSize: true
-    },
-    'goerli': {
-      url: GOERLI_RPC_ENDPOINT_URL as string,
-      accounts: GOERLI_PRIVATE_KEY !== undefined ? [GOERLI_PRIVATE_KEY] : [],
-    }
-  }, 
   etherscan: {
     apiKey: {
       goerli: ETHERSCAN_API_KEY || ""
