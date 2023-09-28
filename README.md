@@ -6,6 +6,11 @@ This Hardhat template includes:
 - Ethers v6
 - Open Zeppelin contracts
 
+## Supported networks
+
+- Goerli
+- Arthera testnet
+
 ## Install
 
 ```
@@ -43,7 +48,27 @@ pnpm mint 42
 Send:
 
 ```
-pnpm mint 8
+pnpm send 8
+```
+
+## Arthera
+
+Deploy: 
+
+```
+pnpm basic:arthera
+```
+
+Mint:
+
+```
+pnpm mint:arthera 42
+```
+
+Send:
+
+```
+pnpm send:arthera 8
 ```
 
 ## Versions
