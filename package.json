@@ -5,9 +5,12 @@
     "main": "index.js",
     "scripts": {
         "test": "hardhat test",
-        "basic": "hardhat run scripts/deploy.ts --network goerli",
-        "mint": "hardhat mint --network goerli --amount",
-        "send": "hardhat send --wallet 0x70456d078950db075283931D9bE2E01B49f3e71e --network goerli --amount",
+        "deploy:goerli": "hardhat run scripts/deploy.ts --network goerli",
+        "deploy:arthera": "hardhat run scripts/deploy.ts --network arthera-testnet",
+        "mint:goerli": "hardhat mint --network goerli --amount",
+        "mint:arthera": "hardhat mint --network arthera-testnet --amount",
+        "send:goerli": "hardhat send --wallet 0x70456d078950db075283931D9bE2E01B49f3e71e --network goerli --amount",
+        "send:arthera": "hardhat send --wallet 0x70456d078950db075283931D9bE2E01B49f3e71e --network arthera-testnet --amount",
         "prettier": "prettier --write ."
     },
     "keywords": [],
