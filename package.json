@@ -5,8 +5,10 @@
     "main": "index.js",
     "scripts": {
         "test": "hardhat test",
-        "deploy:goerli": "hardhat run scripts/deploy.ts --network goerli",
-        "deploy:arthera": "hardhat run scripts/deploy.ts --network arthera-testnet",
+        "deploy:goerli": "hardhat deploy --network goerli",
+        "deploy:arthera": "hardhat deploy --network arthera-testnet",
+        "sourcify:goerli": "hardhat sourcify --network goerli",
+        "sourcify:arthera": "hardhat sourcify --network arthera-testnet",
         "mint:goerli": "hardhat mint --network goerli --amount",
         "mint:arthera": "hardhat mint --network arthera-testnet --amount",
         "send:goerli": "hardhat send --wallet 0x70456d078950db075283931D9bE2E01B49f3e71e --network goerli --amount",
