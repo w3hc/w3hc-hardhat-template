@@ -18,29 +18,29 @@ const {
 const config: HardhatUserConfig = {
     defaultNetwork: "hardhat",
     namedAccounts: {
-      deployer: 0
+        deployer: 0
     },
     networks: {
-      hardhat: {
-          chainId: 1337,
-          allowUnlimitedContractSize: true
-      },
-      goerli: {
-          url:
-              GOERLI_RPC_ENDPOINT_URL || "https://goerli.gateway.tenderly.co",
-          accounts:
-              GOERLI_PRIVATE_KEY !== undefined ? [GOERLI_PRIVATE_KEY] : []
-      },
-      "arthera-testnet": {
-          url:
-              ARTHERA_TESTNET_RPC_ENDPOINT_URL ||
-              "https://rpc-test.arthera.net",
-          accounts:
-              ARTHERA_TESTNET_PRIVATE_KEY !== undefined
-                  ? [ARTHERA_TESTNET_PRIVATE_KEY]
-                  : []
-      }
-  },
+        hardhat: {
+            chainId: 1337,
+            allowUnlimitedContractSize: true
+        },
+        goerli: {
+            url:
+                GOERLI_RPC_ENDPOINT_URL || "https://goerli.gateway.tenderly.co",
+            accounts:
+                GOERLI_PRIVATE_KEY !== undefined ? [GOERLI_PRIVATE_KEY] : []
+        },
+        "arthera-testnet": {
+            url:
+                ARTHERA_TESTNET_RPC_ENDPOINT_URL ||
+                "https://rpc-test.arthera.net",
+            accounts:
+                ARTHERA_TESTNET_PRIVATE_KEY !== undefined
+                    ? [ARTHERA_TESTNET_PRIVATE_KEY]
+                    : []
+        }
+    },
     solidity: {
         version: "0.8.19",
         settings: {
@@ -49,7 +49,7 @@ const config: HardhatUserConfig = {
                 runs: 200
             }
         }
-    },
+    }
     // etherscan: {
     //     apiKey: {
     //         goerli: ETHERSCAN_API_KEY || ""
