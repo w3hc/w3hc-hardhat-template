@@ -48,7 +48,7 @@ Deploy to Arthera Testnet:
 pnpm deploy:arthera
 ```
 
-## Verify using Sourcify 
+## Verify using Sourcify
 
 On Arthera Testnet:
 
