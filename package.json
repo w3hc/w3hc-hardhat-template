@@ -5,14 +5,13 @@
     "main": "index.js",
     "scripts": {
         "test": "hardhat test",
-        "deploy:goerli": "hardhat deploy --network goerli",
+        "deploy:sepolia": "hardhat deploy --network sepolia",
         "deploy:arthera": "hardhat deploy --network arthera-testnet",
-        "sourcify:goerli": "hardhat sourcify --network goerli",
         "sourcify:arthera": "hardhat sourcify --network arthera-testnet",
-        "mint:goerli": "hardhat mint --network goerli --amount",
+        "mint:sepolia": "hardhat mint --network sepolia --amount",
         "mint:arthera": "hardhat mint --network arthera-testnet --amount",
-        "send:goerli": "hardhat send --wallet 0x70456d078950db075283931D9bE2E01B49f3e71e --network goerli --amount",
-        "send:arthera": "hardhat send --wallet 0x70456d078950db075283931D9bE2E01B49f3e71e --network arthera-testnet --amount",
+        "send:sepolia": "hardhat send --wallet 0xD8a394e7d7894bDF2C57139fF17e5CBAa29Dd977 --network sepolia --amount",
+        "send:arthera": "hardhat send --wallet 0xD8a394e7d7894bDF2C57139fF17e5CBAa29Dd977 --network arthera-testnet --amount",
         "prettier": "prettier --write ."
     },
     "keywords": [],

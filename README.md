@@ -9,7 +9,7 @@ This Hardhat template includes:
 
 ## Supported networks
 
--   Goerli
+-   Sepolia
 -   Arthera testnet
 
 ## Install
@@ -34,11 +34,13 @@ pnpm test
 
 ## Deploy
 
-Deploy to Goerli:
+Deploy to Sepolia:
 
 ```
-pnpm deploy:goerli
+pnpm deploy:sepolia
 ```
+
+_Please note that it includes an automatic Etherscan verification._
 
 Deploy to Arthera Testnet:
 
@@ -46,12 +48,20 @@ Deploy to Arthera Testnet:
 pnpm deploy:arthera
 ```
 
-## Mint
+## Verify using Sourcify 
 
-On Goerli:
+On Arthera Testnet:
 
 ```
-pnpm mint:goerli 42
+pnpm sourcify:arthera 8
+```
+
+## Mint
+
+On Sepolia:
+
+```
+pnpm mint:sepolia 42
 ```
 
 On Arthera Testnet:
@@ -62,10 +72,10 @@ pnpm mint:arthera 42
 
 ## Send
 
-On Goerli:
+On Sepolia:
 
 ```
-pnpm send:goerli 8
+pnpm send:sepolia 8
 ```
 
 On Arthera Testnet:
@@ -76,7 +86,7 @@ pnpm send:arthera 8
 
 ## Versions
 
--   Node [v18.17.1](https://nodejs.org/uk/blog/release/v18.17.1/)
+-   Node [v20.9.0](https://nodejs.org/uk/blog/release/v20.9.0/)
 -   PNPM [v8.7.5](https://pnpm.io/pnpm-vs-npm)
 -   Hardhat [v2.17.2](https://github.com/NomicFoundation/hardhat/releases/tag/hardhat%402.17.2)
 -   OpenZeppelin Contracts [v4.9.3](https://github.com/OpenZeppelin/openzeppelin-contracts/releases/tag/v4.9.3)
