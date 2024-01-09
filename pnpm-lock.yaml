@@ -9,8 +9,8 @@ dependencies:
         specifier: npm:hardhat-deploy-ethers@^0.4.1
         version: /hardhat-deploy-ethers@0.4.1(@nomicfoundation/hardhat-ethers@3.0.4)(hardhat-deploy@0.11.37)(hardhat@2.17.2)
     "@openzeppelin/contracts":
-        specifier: ^4.9.3
-        version: 4.9.3
+        specifier: ^5.0.1
+        version: 5.0.1
     "@types/node":
         specifier: ^20.5.7
         version: 20.5.7
@@ -1058,10 +1058,10 @@ packages:
             "@nomicfoundation/solidity-analyzer-win32-ia32-msvc": 0.1.1
             "@nomicfoundation/solidity-analyzer-win32-x64-msvc": 0.1.1
 
-    /@openzeppelin/contracts@4.9.3:
+    /@openzeppelin/contracts@5.0.1:
         resolution:
             {
-                integrity: sha512-He3LieZ1pP2TNt5JbkPA4PNT9WC3gOTOlDcFGJW4Le4QKqwmiNJCRt44APfxMxvq7OugU/cqYuPcSBzOw38DAg==
+                integrity: sha512-yQJaT5HDp9hYOOp4jTYxMsR02gdFZFXhewX5HW9Jo4fsqSVqqyIO/xTHdWDaKX5a3pv1txmf076Lziz+sO7L1w==
             }
         dev: false
 
