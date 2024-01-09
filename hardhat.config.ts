@@ -15,7 +15,9 @@ const {
     ARTHERA_TESTNET_PRIVATE_KEY,
     OP_SEPOLIA_RPC_ENDPOINT_URL,
     OP_SEPOLIA_PRIVATE_KEY,
-    OP_ETHERSCAN_API_KEY
+    OP_ETHERSCAN_API_KEY,
+    ARTHERA_MAINNET_RPC_ENDPOINT_URL,
+    ARTHERA_MAINNET_PRIVATE_KEY
 } = process.env
 
 const config: HardhatUserConfig = {
@@ -27,6 +29,14 @@ const config: HardhatUserConfig = {
         hardhat: {
             chainId: 1337,
             allowUnlimitedContractSize: true
+        },
+        arthera: {
+            chainId: 10242,
+            url: ARTHERA_MAINNET_RPC_ENDPOINT_URL || "https://rpc.arthera.net",
+            accounts:
+                ARTHERA_MAINNET_PRIVATE_KEY !== undefined
+                    ? [ARTHERA_MAINNET_PRIVATE_KEY]
+                    : []
         },
         sepolia: {
             url: SEPOLIA_RPC_ENDPOINT_URL || "https://sepolia.optimism.io",

@@ -10,9 +10,10 @@ This Hardhat template includes:
 
 ## Supported networks
 
+-   [Arthera Mainnet](https://chainlist.org/chain/10242) ([docs](https://docs.arthera.net/build/networks#arthera-mainnet))
+-   [Arthera testnet](https://chainlist.org/chain/10243) ([docs](https://docs.arthera.net/build/networks#arthera-testnet))
 -   [Sepolia Testnet](https://chainlist.org/chain/11155111) ([docs](https://ethereum.org/nb/developers/docs/networks/#sepolia))
 -   [OP Sepolia Testnet](https://chainlist.org/chain/11155420) ([docs](https://docs.optimism.io/chain/networks#op-sepolia))
--   [Arthera testnet](https://chainlist.org/chain/10243) ([docs](https://docs.arthera.net/build/networks#arthera-testnet))
 
 ## Install
 
@@ -36,18 +37,8 @@ pnpm test
 
 ## Deploy
 
-Deploy to Sepolia:
-
 ```
-pnpm deploy:sepolia
-```
-
-_Please note that it includes an automatic Etherscan verification._
-
-Deploy to Arthera Testnet:
-
-```
-pnpm deploy:arthera
+pnpm deploy:<NETWORK_NAME>
 ```
 
 ## Check balance
@@ -55,43 +46,25 @@ pnpm deploy:arthera
 You can check the current signer wallet balance:
 
 ```
-pnpm bal op-sepolia
+pnpm bal <NETWORK_NAME>
 ```
 
 ## Verify using Sourcify
 
-On Arthera Testnet:
-
 ```
-pnpm sourcify:arthera 8
+pnpm sourcify:<NETWORK_NAME>
 ```
 
 ## Mint
 
-On Sepolia:
-
 ```
-pnpm mint:sepolia 42
-```
-
-On Arthera Testnet:
-
-```
-pnpm mint:arthera 42
+pnpm mint:<NETWORK_NAME> 42
 ```
 
 ## Send
 
-On Sepolia:
-
 ```
-pnpm send:sepolia 8
-```
-
-On Arthera Testnet:
-
-```
-pnpm send:arthera 8
+pnpm send:<NETWORK_NAME> 8
 ```
 
 ## Versions
