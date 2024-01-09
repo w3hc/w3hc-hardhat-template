@@ -2,10 +2,11 @@
 
 This Hardhat template includes:
 
--   Typescript
--   Ethers v6
--   Open Zeppelin contracts
--   Hardhat Verify plugin
+-   [Typescript](https://www.typescriptlang.org/)
+-   [Ethers v6](https://docs.ethers.org/v6/)
+-   [Open Zeppelin contracts v4.9.3](https://github.com/OpenZeppelin/openzeppelin-contracts/tree/release-v4.9)
+-   [Hardhat Verify plugin](https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-verify)
+-   [Hardhat Deploy plugin](https://github.com/wighawag/hardhat-deploy)
 
 ## Supported networks
 

@@ -45,7 +45,7 @@ const config: HardhatUserConfig = {
             // gasPrice: 5000000000
         },
         "arthera-testnet": {
-            chainId: 11155420,
+            chainId: 10243,
             url:
                 ARTHERA_TESTNET_RPC_ENDPOINT_URL ||
                 "https://rpc-test.arthera.net",
