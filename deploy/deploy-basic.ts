@@ -9,7 +9,7 @@ export default async ({ getNamedAccounts, deployments }: any) => {
     const { deploy } = deployments
 
     const { deployer } = await getNamedAccounts()
-    console.log(deployer)
+    console.log("deployer:", deployer)
 
     const basic = await deploy("Basic", {
         from: deployer,
