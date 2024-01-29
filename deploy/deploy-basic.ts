@@ -1,5 +1,5 @@
 import "@nomiclabs/hardhat-ethers"
-const color = require("cli-color")
+import color from "cli-color"
 var msg = color.xterm(39).bgXterm(128)
 import hre, { ethers, network } from "hardhat"
 
@@ -16,9 +16,6 @@ export default async ({ getNamedAccounts, deployments }: any) => {
         args: [initialMint],
         log: true
     })
-
-    console.log("basic.receipt.contractAddress:", basic.receipt.contractAddress)
-    console.log("hre.network.name:", hre.network.name)
 
     switch (hre.network.name) {
         case "arthera":
