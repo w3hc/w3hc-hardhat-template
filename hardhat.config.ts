@@ -39,7 +39,9 @@ const config: HardhatUserConfig = {
                     : []
         },
         sepolia: {
-            url: SEPOLIA_RPC_ENDPOINT_URL || "https://sepolia.optimism.io",
+            url:
+                SEPOLIA_RPC_ENDPOINT_URL ||
+                "https://ethereum-sepolia.publicnode.com",
             accounts:
                 SEPOLIA_PRIVATE_KEY !== undefined ? [SEPOLIA_PRIVATE_KEY] : []
         },
@@ -71,7 +73,8 @@ const config: HardhatUserConfig = {
             optimizer: {
                 enabled: true,
                 runs: 200
-            }
+            },
+            evmVersion: "shanghai"
         }
     },
     etherscan: {
