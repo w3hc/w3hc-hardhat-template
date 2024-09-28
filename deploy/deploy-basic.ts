@@ -78,22 +78,6 @@ export default async ({ getNamedAccounts, deployments }: any) => {
                 console.error(error)
             }
             break
-
-        case "arthera":
-            // the contract will be verified automatically
-            console.log(
-                "Basic ERC-20 token contract deployed:",
-                msg(basic.receipt.contractAddress)
-            )
-            break
-
-        case "arthera-testnet":
-            // the contract will be verified automatically
-            console.log(
-                "Basic ERC-20 token contract deployed:",
-                msg(basic.receipt.contractAddress)
-            )
-            break
     }
 }
 export const tags = ["Basic"]

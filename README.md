@@ -10,8 +10,7 @@ This Hardhat template includes:
 
 ## Supported networks
 
--   [Arthera Mainnet](https://chainlist.org/chain/10242) ([docs](https://docs.arthera.net/build/networks#arthera-mainnet))
--   [Arthera testnet](https://chainlist.org/chain/10243) ([docs](https://docs.arthera.net/build/networks#arthera-testnet))
+-   [OP Mainnet](https://chainlist.org/chain/10) ([docs](https://docs.optimism.io/chain/networks#op-mainnet))
 -   [Sepolia Testnet](https://chainlist.org/chain/11155111) ([docs](https://ethereum.org/nb/developers/docs/networks/#sepolia))
 -   [OP Sepolia Testnet](https://chainlist.org/chain/11155420) ([docs](https://docs.optimism.io/chain/networks#op-sepolia))
 
@@ -47,12 +46,6 @@ You can check the current signer wallet balance:
 
 ```
 pnpm bal <NETWORK_NAME>
-```
-
-## Verify using Sourcify
-
-```
-pnpm sourcify:<NETWORK_NAME>
 ```
 
 ## Mint
