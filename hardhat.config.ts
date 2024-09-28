@@ -11,15 +11,11 @@ const {
     SEPOLIA_RPC_ENDPOINT_URL,
     SEPOLIA_PRIVATE_KEY,
     ETHERSCAN_API_KEY,
-    ARTHERA_TESTNET_RPC_ENDPOINT_URL,
-    ARTHERA_TESTNET_PRIVATE_KEY,
     OPTIMISM_MAINNET_RPC_ENDPOINT_URL,
     OPTIMISM_MAINNET_PRIVATE_KEY,
     OP_ETHERSCAN_API_KEY,
     OP_SEPOLIA_RPC_ENDPOINT_URL,
-    OP_SEPOLIA_PRIVATE_KEY,
-    ARTHERA_MAINNET_RPC_ENDPOINT_URL,
-    ARTHERA_MAINNET_PRIVATE_KEY
+    OP_SEPOLIA_PRIVATE_KEY
 } = process.env
 
 const config: HardhatUserConfig = {
@@ -32,15 +28,8 @@ const config: HardhatUserConfig = {
             chainId: 1337,
             allowUnlimitedContractSize: true
         },
-        arthera: {
-            chainId: 10242,
-            url: ARTHERA_MAINNET_RPC_ENDPOINT_URL || "https://rpc.arthera.net",
-            accounts:
-                ARTHERA_MAINNET_PRIVATE_KEY !== undefined
-                    ? [ARTHERA_MAINNET_PRIVATE_KEY]
-                    : []
-        },
         sepolia: {
+            chainId: 11155111,
             url:
                 SEPOLIA_RPC_ENDPOINT_URL ||
                 "https://ethereum-sepolia.publicnode.com",
@@ -66,17 +55,6 @@ const config: HardhatUserConfig = {
                 OP_SEPOLIA_PRIVATE_KEY !== undefined
                     ? [OP_SEPOLIA_PRIVATE_KEY]
                     : []
-            // gasPrice: 5000000000
-        },
-        "arthera-testnet": {
-            chainId: 10243,
-            url:
-                ARTHERA_TESTNET_RPC_ENDPOINT_URL ||
-                "https://rpc-test.arthera.net",
-            accounts:
-                ARTHERA_TESTNET_PRIVATE_KEY !== undefined
-                    ? [ARTHERA_TESTNET_PRIVATE_KEY]
-                    : []
         }
     },
     solidity: {
@@ -85,8 +63,7 @@ const config: HardhatUserConfig = {
             optimizer: {
                 enabled: true,
                 runs: 200
-            },
-            evmVersion: "shanghai"
+            }
         }
     },
     etherscan: {
