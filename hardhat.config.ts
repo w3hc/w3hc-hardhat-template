@@ -11,14 +11,16 @@ const {
     OPTIMISM_MAINNET_RPC_ENDPOINT_URL,
     OPTIMISM_MAINNET_PRIVATE_KEY,
     OP_ETHERSCAN_API_KEY,
+    BASE_MAINNET_RPC_ENDPOINT_URL,
+    BASE_MAINNET_PRIVATE_KEY,
+    BASE_ETHERSCAN_API_KEY,
     SEPOLIA_RPC_ENDPOINT_URL,
     SEPOLIA_PRIVATE_KEY,
     ETHERSCAN_API_KEY,
     OP_SEPOLIA_RPC_ENDPOINT_URL,
     OP_SEPOLIA_PRIVATE_KEY,
     BASE_SEPOLIA_RPC_ENDPOINT_URL,
-    BASE_SEPOLIA_PRIVATE_KEY,
-    BASE_ETHERSCAN_API_KEY
+    BASE_SEPOLIA_PRIVATE_KEY
 } = process.env
 
 const config: HardhatUserConfig = {
@@ -49,6 +51,14 @@ const config: HardhatUserConfig = {
                     ? [OPTIMISM_MAINNET_PRIVATE_KEY]
                     : []
         },
+        base: {
+            chainId: 8453,
+            url: BASE_MAINNET_RPC_ENDPOINT_URL || "https://mainnet.base.org",
+            accounts:
+                BASE_MAINNET_PRIVATE_KEY !== undefined
+                    ? [BASE_MAINNET_PRIVATE_KEY]
+                    : []
+        },
         "op-sepolia": {
             chainId: 11155420,
             url:
@@ -77,8 +87,13 @@ const config: HardhatUserConfig = {
             }
         }
     },
+    sourcify: {
+        enabled: true
+    },
     etherscan: {
         apiKey: {
+            optimism: OP_ETHERSCAN_API_KEY || "",
+            base: BASE_ETHERSCAN_API_KEY || "",
             sepolia: ETHERSCAN_API_KEY || "",
             optimisticEthereum: OP_ETHERSCAN_API_KEY || "",
             "op-sepolia": OP_ETHERSCAN_API_KEY || "",

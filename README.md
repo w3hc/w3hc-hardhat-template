@@ -34,8 +34,47 @@ A comprehensive development environment for Ethereum-compatible networks using H
 |---------|--------------|---------|-----------------|
 | Sepolia | https://sepolia.etherscan.io | https://api-sepolia.etherscan.io/api | ETHERSCAN_API_KEY |
 | Optimism | https://optimistic.etherscan.io | https://api-optimistic.etherscan.io/api | OP_ETHERSCAN_API_KEY |
+| Base | https://basescan.org | https://api.basescan.org/api | BASE_ETHERSCAN_API_KEY |
 | OP Sepolia | https://sepolia-optimism.etherscan.io | https://api-sepolia-optimistic.etherscan.io/api | OP_ETHERSCAN_API_KEY |
 | Base Sepolia | https://sepolia.basescan.org | https://api-sepolia.basescan.org/api | BASE_ETHERSCAN_API_KEY |
+
+### Manual Contract Verification
+
+When deploying, you may see this error:
+```
+ContractStatusPollingResponseNotOkError: The Etherscan API responded with a failure status.
+Reason: Fail - Unable to verify. Unable to locate ContractCode at <address>
+```
+
+This is normal - it means the contract needs time to be indexed. Wait 1-2 minutes, then run:
+
+```bash
+npx hardhat verify --network <NETWORK_NAME> <CONTRACT_ADDRESS> "10000000000000000000000"
+```
+
+Where:
+- `<NETWORK_NAME>`: `optimism`, `base`, `op-sepolia`, or `base-sepolia`
+- `<CONTRACT_ADDRESS>`: The address where your contract was deployed
+
+Note: The constructor argument represents the initial supply in wei (e.g., "10000000000000000000000" for 10,000 tokens with 18 decimals)
+
+If the verification fails with "Unable to locate ContractCode", wait a few minutes for the contract to be indexed by the block explorer and try again.
+
+Alternative Manual Verification via Block Explorers:
+- Optimism: https://optimistic.etherscan.io/verifyContract
+- Base: https://basescan.org/verifyContract
+- OP Sepolia: https://sepolia-optimism.etherscan.io/verifyContract 
+- Base Sepolia: https://sepolia.basescan.org/verifyContract
+
+When verifying through block explorers:
+1. Choose "Solidity (Single file)"
+2. Fill in:
+   - Contract Address
+   - Compiler: v0.8.20
+   - License: GPL-3.0
+   - Optimization: Yes (200 runs)
+   - Contract code from Basic.sol
+   - Constructor Arguments: 10000000000000000000000
 
 ## Installation
 
