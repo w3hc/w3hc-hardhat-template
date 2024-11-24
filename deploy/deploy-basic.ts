@@ -22,6 +22,44 @@ export default async ({ getNamedAccounts, deployments }: any) => {
     })
 
     switch (hre.network.name) {
+        case "optimism":
+            try {
+                console.log(
+                    "Basic ERC-20 token contract deployed:",
+                    msg(basic.receipt.contractAddress)
+                )
+                console.log("\nEtherscan verification in progress...")
+                await wait(30 * 1000)
+                await hre.run("verify:verify", {
+                    network: network.name,
+                    address: basic.receipt.contractAddress,
+                    constructorArguments: [initialMint]
+                })
+                console.log("Etherscan verification done. ✅")
+            } catch (error) {
+                console.error(error)
+            }
+            break
+
+        case "base":
+            try {
+                console.log(
+                    "Basic ERC-20 token contract deployed:",
+                    msg(basic.receipt.contractAddress)
+                )
+                console.log("\nBasescan verification in progress...")
+                await wait(30 * 1000)
+                await hre.run("verify:verify", {
+                    network: network.name,
+                    address: basic.receipt.contractAddress,
+                    constructorArguments: [initialMint]
+                })
+                console.log("Basescan verification done. ✅")
+            } catch (error) {
+                console.error(error)
+            }
+            break
+
         case "sepolia":
             try {
                 console.log(
@@ -41,14 +79,14 @@ export default async ({ getNamedAccounts, deployments }: any) => {
             }
             break
 
-        case "optimism":
+        case "op-sepolia":
             try {
                 console.log(
                     "Basic ERC-20 token contract deployed:",
                     msg(basic.receipt.contractAddress)
                 )
                 console.log("\nEtherscan verification in progress...")
-                await wait(20 * 1000)
+                await wait(30 * 1000)
                 await hre.run("verify:verify", {
                     network: network.name,
                     address: basic.receipt.contractAddress,
@@ -60,20 +98,20 @@ export default async ({ getNamedAccounts, deployments }: any) => {
             }
             break
 
-        case "op-sepolia":
+        case "base-sepolia":
             try {
                 console.log(
                     "Basic ERC-20 token contract deployed:",
                     msg(basic.receipt.contractAddress)
                 )
-                console.log("\nEtherscan verification in progress...")
-                await wait(90 * 1000)
+                console.log("\nBasescan verification in progress...")
+                await wait(30 * 1000)
                 await hre.run("verify:verify", {
                     network: network.name,
                     address: basic.receipt.contractAddress,
                     constructorArguments: [initialMint]
                 })
-                console.log("Etherscan verification done. ✅")
+                console.log("Basescan verification done. ✅")
             } catch (error) {
                 console.error(error)
             }

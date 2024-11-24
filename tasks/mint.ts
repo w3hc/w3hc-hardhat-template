@@ -1,32 +1,46 @@
 import { task } from "hardhat/config"
+import fs from "fs"
+import path from "path"
 var msg = require("cli-color").xterm(39).bgXterm(128)
-import * as optimismDeploymentData from "../deployments/op-sepolia/Basic.json"
-import * as sepoliaDeploymentData from "../deployments/sepolia/Basic.json"
-import * as opSepoliaDeploymentData from "../deployments/op-sepolia/Basic.json"
+var error = require("cli-color").red.bold
 
 task("mint", "Mint a given amount of ERC-20 tokens")
     .addParam("amount")
-    .setAction(async (amount, hre) => {
+    .setAction(async (args, hre) => {
+        const ethers = hre.ethers
         const [signer] = await ethers.getSigners()
         const Basic = await ethers.getContractFactory("Basic")
-        let addr
-        switch (hre.network.name) {
-            case "optimism":
-                addr = optimismDeploymentData.address
-                break
-            case "sepolia":
-                addr = sepoliaDeploymentData.address
-                break
-            case "op-sepolia":
-                addr = opSepoliaDeploymentData.address
-                break
+
+        const deploymentPath = path.join(
+            __dirname,
+            "..",
+            "deployments",
+            hre.network.name,
+            "Basic.json"
+        )
+
+        if (!fs.existsSync(deploymentPath)) {
+            console.log(
+                error(
+                    `\nCan't find a deployed instance of Basic ERC-20 on ${hre.network.name}`
+                ),
+                "\nTry deploying it first with:",
+                msg(`\npnpm deploy:${hre.network.name}`)
+            )
+            return
         }
+
+        const deploymentData = JSON.parse(
+            fs.readFileSync(deploymentPath, "utf8")
+        )
+        const addr = deploymentData.address
+
         const erc20 = new ethers.Contract(addr, Basic.interface, signer)
-        const mint = await erc20.mint(await ethers.parseEther(amount.amount))
+        const mint = await erc20.mint(await ethers.parseEther(args.amount))
         const hash = mint.hash
         console.log(
             "Minted",
-            msg(amount.amount),
+            msg(args.amount),
             "units. \n\nTx hash:",
             msg(hash)
         )
