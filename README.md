@@ -13,6 +13,7 @@ This Hardhat template includes:
 -   [OP Mainnet](https://chainlist.org/chain/10) ([docs](https://docs.optimism.io/chain/networks#op-mainnet))
 -   [Sepolia Testnet](https://chainlist.org/chain/11155111) ([docs](https://ethereum.org/nb/developers/docs/networks/#sepolia))
 -   [OP Sepolia Testnet](https://chainlist.org/chain/11155420) ([docs](https://docs.optimism.io/chain/networks#op-sepolia))
+-   [Base Sepolia Testnet](https://chainlist.org/chain/84532) ([docs](https://docs.basescan.org/getting-started/endpoint-urls))
 
 ## Install
 

@@ -67,13 +67,33 @@ export default async ({ getNamedAccounts, deployments }: any) => {
                     msg(basic.receipt.contractAddress)
                 )
                 console.log("\nEtherscan verification in progress...")
-                await wait(90 * 1000)
+                await wait(20 * 1000)
                 await hre.run("verify:verify", {
                     network: network.name,
                     address: basic.receipt.contractAddress,
                     constructorArguments: [initialMint]
                 })
                 console.log("Etherscan verification done. ✅")
+            } catch (error) {
+                console.error(error)
+            }
+            break
+
+        case "base-sepolia":
+            try {
+                console.log(
+                    "Basic ERC-20 token contract deployed:",
+                    msg(basic.receipt.contractAddress)
+                )
+                console.log("\nBasescan verification in progress...")
+                // Base Sepolia typically needs a longer wait time for propagation
+                await wait(90 * 1000)
+                await hre.run("verify:verify", {
+                    network: network.name,
+                    address: basic.receipt.contractAddress,
+                    constructorArguments: [initialMint]
+                })
+                console.log("Basescan verification done. ✅")
             } catch (error) {
                 console.error(error)
             }
