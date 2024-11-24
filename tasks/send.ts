@@ -1,5 +1,4 @@
 import { task } from "hardhat/config"
-import { ethers } from "hardhat"
 import fs from "fs"
 import path from "path"
 var msg = require("cli-color").xterm(39).bgXterm(128)
@@ -9,6 +8,7 @@ task("send", "Send a given amount of tokens to a given address")
     .addParam("wallet")
     .addParam("amount")
     .setAction(async (args, hre) => {
+        const ethers = hre.ethers
         const [signer] = await ethers.getSigners()
         const Basic = await ethers.getContractFactory("Basic")
 

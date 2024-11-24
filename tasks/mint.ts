@@ -1,5 +1,4 @@
 import { task } from "hardhat/config"
-import { ethers } from "hardhat"
 import fs from "fs"
 import path from "path"
 var msg = require("cli-color").xterm(39).bgXterm(128)
@@ -7,7 +6,8 @@ var error = require("cli-color").red.bold
 
 task("mint", "Mint a given amount of ERC-20 tokens")
     .addParam("amount")
-    .setAction(async (amount, hre) => {
+    .setAction(async (args, hre) => {
+        const ethers = hre.ethers
         const [signer] = await ethers.getSigners()
         const Basic = await ethers.getContractFactory("Basic")
 
@@ -36,12 +36,11 @@ task("mint", "Mint a given amount of ERC-20 tokens")
         const addr = deploymentData.address
 
         const erc20 = new ethers.Contract(addr, Basic.interface, signer)
-        const mint = await erc20.mint(await ethers.parseEther(amount.amount))
+        const mint = await erc20.mint(await ethers.parseEther(args.amount))
         const hash = mint.hash
-
         console.log(
             "Minted",
-            msg(amount.amount),
+            msg(args.amount),
             "units. \n\nTx hash:",
             msg(hash)
         )
