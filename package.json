@@ -3,6 +3,7 @@
     "version": "0.1.0",
     "description": "",
     "main": "index.js",
+    "type": "commonjs",
     "scripts": {
         "test": "hardhat test",
         "compile": "hardhat compile",
@@ -22,23 +23,28 @@
         "prettier": "prettier --write \"**/*.ts\"",
         "prettier-check": "prettier --check \"**/*.ts\""
     },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
+    "keywords": [
+        "template",
+        "hardhat",
+        "solidity",
+        "web3"
+    ],
+    "author": "W3HC",
     "devDependencies": {
         "@nomicfoundation/hardhat-chai-matchers": "^2.0.8",
         "@nomicfoundation/hardhat-ethers": "^3.0.8",
         "@nomicfoundation/hardhat-network-helpers": "^1.0.12",
-        "@nomicfoundation/hardhat-toolbox": "^3.0.0",
-        "@nomicfoundation/hardhat-verify": "^1.1.1",
-        "@typechain/ethers-v6": "^0.4.3",
-        "@typechain/hardhat": "^8.0.3",
-        "@types/chai": "^4.3.20",
+        "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+        "@nomicfoundation/hardhat-verify": "^2.0.12",
+        "@typechain/ethers-v6": "^0.5.1",
+        "@typechain/hardhat": "^9.1.0",
+        "@types/chai": "^4.2.0",
         "@types/cli-color": "^2.0.6",
         "@types/mocha": "^10.0.10",
-        "chai": "^4.5.0",
+        "@types/node": "^22.9.3",
+        "chai": "^4.2.0",
         "hardhat": "^2.22.16",
-        "hardhat-gas-reporter": "^1.0.10",
+        "hardhat-gas-reporter": "^1.0.8",
         "prettier": "^2.8.8",
         "prettier-plugin-solidity": "^1.4.1",
         "solidity-coverage": "^0.8.13",
@@ -47,12 +53,11 @@
         "typescript": "^5.7.2"
     },
     "dependencies": {
-        "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers@^0.4.1",
+        "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers@^0.4.2",
         "@openzeppelin/contracts": "^5.1.0",
-        "@types/node": "^20.17.7",
         "cli-color": "^2.0.4",
         "dotenv": "^16.4.5",
         "ethers": "^6.13.4",
-        "hardhat-deploy": "^0.11.45"
+        "hardhat-deploy": "^0.12.0"
     }
 }
