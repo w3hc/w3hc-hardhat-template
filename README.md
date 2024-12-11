@@ -77,9 +77,9 @@ Supported values for `<network>`: `optimism`, `base`, `arbitrum`, `sepolia`, `op
 
 ### Network Operations
 
-Check wallet balance:
+Check wallet ETH balances:
 ```bash
-pnpm bal <network>
+pnpm bal
 ```
 
 Mint tokens:
