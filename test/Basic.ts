@@ -13,9 +13,8 @@ describe("Basic ERC-20", function () {
 
     describe("Deployment", function () {
         it("Should return a balance of 10,000 units", async function () {
-            const { basic, initialBalance, alice } = await loadFixture(
-                deployContracts
-            )
+            const { basic, initialBalance, alice } =
+                await loadFixture(deployContracts)
             expect(await basic.balanceOf(alice.address)).to.equal(
                 initialBalance
             )
